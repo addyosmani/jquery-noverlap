@@ -8,8 +8,8 @@
     $.fn.noverlap = function( options ) {
 
     	$.fn.noverlap.defaults = {
-    		leftOffset: 290,
-    		topOffset: 290,
+    		regionWidth: 600,
+    		regionHeight: 390,
     		speed: "slow"
     	};
     	
@@ -25,8 +25,8 @@
 			},
 			complete = false;
 			while (!complete){
-				d.left = parseInt(Math.random() * o.leftOffset);
-				d.top = parseInt(Math.random() * o.topOffset);
+				d.left = parseInt(Math.random() * o.regionWidth);
+				d.top = parseInt(Math.random() * o.regionHeight);
 				complete = true;
 				$.each(coords, function(){
 					if (d.left < this.left + this.width && d.left + d.width > this.left &&
