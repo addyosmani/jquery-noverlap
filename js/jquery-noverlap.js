@@ -13,7 +13,7 @@
     		regionLeft:0,
     		regionTop:0,
     		speed: "slow",
-    		boundTo: null,
+    		boundTo: null, //accepts jQuery objects or string selectors
     		regionResize: 0.85
     	};
     	
@@ -24,22 +24,19 @@
     		
     		
     	if(!(o.boundTo==null)){
-    		//typeof check needed.
-    		//support for all margin types?
-    		var elem = $(o.boundTo);
+    		var elem;
+    		(o.boundTo instanceof jQuery)? elem = o.boundTo : elem = $(o.boundTo);
+    		var offset = elem.offset();
     		o.regionWidth = parseInt(elem.css('width')) * o.regionResize;
     		o.regionHeight = parseInt(elem.css('height')) * o.regionResize;
-    		o.regionLeft  = parseInt(elem.css('left')) || parseInt(elem.css('margin-left'));
-    		o.regionTop   = parseInt(elem.css('top')) || parseInt(elem.css('margin-top'));
-    		console.log(o);
+    		o.regionLeft  = parseInt(offset.left) || parseInt(elem.css('left')) || parseInt(elem.css('margin-left'));
+    		o.regionTop   = parseInt(offset.top) || parseInt(elem.css('top')) || parseInt(elem.css('margin-top'));
+
     	}
     	
         return this.each(function() {
 			cxt = $(this),
-			d= {
-					width: cxt.outerWidth(),
-					height: cxt.outerHeight()
-			},
+			d= { width: cxt.outerWidth(), height: cxt.outerHeight() },
 			complete = false;
 			while (!complete){
 				d.left = parseInt(Math.random() * o.regionWidth + o.regionLeft);
