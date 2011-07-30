@@ -24,7 +24,7 @@ describe("NoverlapSpec", function(){
 		expect(isValid).toEqual(true);
 	});
 
-	it("should pass the overlapping algorithm test", function(){
+	it("should ensure that all elements re-positioned using the plugin pass the overlap test", function(){
 	
 		var c = null, 
 		complete = false, 
