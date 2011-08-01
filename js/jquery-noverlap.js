@@ -21,13 +21,14 @@
     	
     	var o = $.extend({}, $.fn.noverlap.defaults, options),
     		coords = [],
-    		ctx = null;
+    		ctx = null,
+			props = [];
     		
     		
     	if(!(o.boundTo==null)){
-    		var elem;
+    		var elem, offset;
     		(o.boundTo instanceof jQuery)? elem = o.boundTo : elem = $(o.boundTo);
-    		var offset = elem.offset();
+    		offset = elem.offset();
     		o.regionWidth = parseInt(elem.css('width')) * o.regionResize;
     		o.regionHeight = parseInt(elem.css('height')) * o.regionResize;
     		o.regionLeft  = parseInt(offset.left) || parseInt(elem.css('left')) || parseInt(elem.css('margin-left'));
@@ -36,16 +37,18 @@
     	
         return this.each(function() {
 			cxt = $(this),
-			d= { width: cxt.outerWidth(), height: cxt.outerHeight() },
+			d= { width: parseInt(cxt.outerWidth()), height: parseInt(cxt.outerHeight()) },
 			complete = false;
 			while (!complete){
-				d.left = parseInt(Math.random() * o.regionWidth + o.regionLeft);
-				d.top = parseInt(Math.random() * o.regionHeight + o.regionTop);
-				complete = true;
+				d.left = parseInt(Math.random() * parseInt(o.regionWidth) + o.regionLeft);
+				d.top = parseInt(Math.random() * parseInt(o.regionHeight) + o.regionTop);
+				var complete = true;
 				$.each(coords, function(){
-					if (d.left < this.left + this.width && d.left + d.width > this.left &&
-						d.top < this.top + this.height && d.top + d.height > this.top){
-						complete = false;
+					if(d.left < this.left + this.width &&
+				       d.left + d.width > this.left &&
+				       d.top < this.top + this.height &&
+				       d.top + d.height > this.top){ 
+					complete = false;
 					}
 				});
 			}

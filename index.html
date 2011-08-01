@@ -83,25 +83,28 @@
 		<p><h2>regionResize example</h2></p>
 		<p>
 		<div id="magic3">
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
-		<a href="#" class="win">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
+		<a href="#" class="dot">elem</a>
 		</div>
 		</p>
 
@@ -118,9 +121,12 @@
 	<script type="text/javascript" src="js/jquery-noverlap.js"></script>
 	<script type="text/javascript">
 	$(function(){
-		$('#magic1 .win').noverlap({'boundTo':$('#magic1'),'animate':true}); //doesnt animate
-		$('#magic2 .win').noverlap({'boundTo':$('#magic2'),'animate':false});
-		//$('#magic3 .win').noverlap({'boundTo':$('#magic3'),'animate':false, 'regionResize':0.6});
+		//$('#magic1 .win').noverlap({'regionWidth':'600px', 'regionHeight':'300px'}); //doesnt animate
+		$('#magic1 .win').noverlap({'boundTo':'#magic1'});
+		$('#magic2 .win').noverlap({'boundTo':'#magic2', 'animate':false});
+		$('#magic3 .dot').noverlap({'boundTo':'#magic3', 'animate':false});
+		//$('#magic2 .win').noverlap({'boundTo':$('#magic2'),'animate':false});
+		//$('#magic3 .win').noverlap({'boundTo':$('#magic3'),'animate':false});
 
 	});
 </script>
