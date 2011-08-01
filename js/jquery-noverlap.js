@@ -14,7 +14,8 @@
     		regionTop:0,
     		speed: "slow",
     		boundTo: null, //accepts jQuery objects or string selectors
-    		regionResize: 0.85
+    		regionResize: 0.85,
+			animate: true
     	};
     	
     	
@@ -50,7 +51,7 @@
 				});
 			}
 			coords.push(d);
-			cxt.animate({left: d.left,top: d.top}, o.speed);
+			(o.animate)? cxt.animate({left: d.left,top: d.top}, o.speed) : cxt.css({left: d.left,top: d.top});
 			});
     }
 

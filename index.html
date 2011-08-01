@@ -40,12 +40,17 @@
 			<a href="#" class="win">elem</a>
 			<a href="#" class="win">elem</a>
 			<a href="#" class="win">elem</a>
+			<a href="#" class="win">elem</a>
+			<a href="#" class="win">elem</a>
+			<a href="#" class="win">elem</a>
+			<a href="#" class="win">elem</a>
+			<a href="#" class="win">elem</a>
 		</div>
 		
-		<div id="magic1" style="margin-left:200px;height:400px;width:400px;background:black">
+		<div id="magic1" style="margin-left:200px;height:600px;width:600px;background:black">
 		</div>
 		
-		<div id="magic2" style="margin:40px 40px 40px 40px;height:400px;width:400px;background:black">
+		<div id="magic2" style="margin:40px 40px 40px 40px;height:200px;width:400px;background:black">
 		</div>
 
 		<footer>
@@ -61,9 +66,9 @@
 	<script type="text/javascript" src="js/jquery-noverlap.js"></script>
 	<script type="text/javascript">
 	$(function(){
-		//$('.win').noverlap({'boundTo':'#magic'});
+		//$('.win').noverlap({'boundTo':'#magic1'}); //animates
 		//$('.win').noverlap({'boundTo':'#magic2'});
-		$('.win').noverlap({'boundTo':$('#magic2')});
+		$('.win').noverlap({'boundTo':$('#magic1'),'animate':false}); //doesnt animate
 
 	});
 </script>
