@@ -22,36 +22,88 @@
 <body>
 	<div id="container">
 		<header>
-
+			<h1>Non-overlapping demo</h1>
 		</header>
 
 		<div id="main" role="main">
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
-			<a href="#" class="win">elem</a>
+
 		</div>
 		
-		<div id="magic1" style="margin-left:200px;height:600px;width:600px;background:black">
-		</div>
 		
-		<div id="magic2" style="margin:40px 40px 40px 40px;height:200px;width:400px;background:black">
+		<p><h2>Animated Positioning</h2></p>
+		<p>
+		<div id="magic1">
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
 		</div>
+		</p>
+		
+		<p><h2>CSS-only positioning</h2></p>
+		<p>
+		<div id="magic2">
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		</div>
+		</p>
+		
+		<p><h2>regionResize example</h2></p>
+		<p>
+		<div id="magic3">
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		<a href="#" class="win">elem</a>
+		</div>
+		</p>
 
 		<footer>
 
@@ -66,9 +118,9 @@
 	<script type="text/javascript" src="js/jquery-noverlap.js"></script>
 	<script type="text/javascript">
 	$(function(){
-		//$('.win').noverlap({'boundTo':'#magic1'}); //animates
-		//$('.win').noverlap({'boundTo':'#magic2'});
-		$('.win').noverlap({'boundTo':$('#magic1'),'animate':false}); //doesnt animate
+		$('#magic1 .win').noverlap({'boundTo':$('#magic1'),'animate':true}); //doesnt animate
+		$('#magic2 .win').noverlap({'boundTo':$('#magic2'),'animate':false});
+		//$('#magic3 .win').noverlap({'boundTo':$('#magic3'),'animate':false, 'regionResize':0.6});
 
 	});
 </script>

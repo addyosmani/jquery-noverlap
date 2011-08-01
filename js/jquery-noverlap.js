@@ -32,7 +32,6 @@
     		o.regionHeight = parseInt(elem.css('height')) * o.regionResize;
     		o.regionLeft  = parseInt(offset.left) || parseInt(elem.css('left')) || parseInt(elem.css('margin-left'));
     		o.regionTop   = parseInt(offset.top) || parseInt(elem.css('top')) || parseInt(elem.css('margin-top'));
-
     	}
     	
         return this.each(function() {
