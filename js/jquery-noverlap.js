@@ -36,7 +36,7 @@
     		o.regionTop   = parseInt(offset.top) || parseInt(elem.css('top')) || parseInt(elem.css('margin-top'));
     	}
     	
-        return this.each(function() {
+        return this.each(function(){
 			cxt = $(this),
 			d= { width: parseInt(cxt.outerWidth()), height: parseInt(cxt.outerHeight()) },
 			complete = false;
