@@ -22,7 +22,8 @@
     	var o = $.extend({}, $.fn.noverlap.defaults, options),
     		coords = [],
     		ctx = null,
-			props = [];
+			props = [],
+			t = null;
     		
     		
     	if(!(o.boundTo==null)){
@@ -42,7 +43,16 @@
 			while (!complete){
 				d.left = parseInt(Math.random() * parseInt(o.regionWidth) + o.regionLeft);
 				d.top = parseInt(Math.random() * parseInt(o.regionHeight) + o.regionTop);
-				var complete = true;
+				complete = true;
+				//
+				for(var i=0; i<coords.length;i++){
+					t = coords[i];
+					if(d.left < t.left + t.width && d.left + d.width > t.left &&
+				       d.top < t.top + t.height && d.top + d.height > t.top){ 
+						complete = false;
+					}
+				}
+				/*
 				$.each(coords, function(){
 					if(d.left < this.left + this.width &&
 				       d.left + d.width > this.left &&
@@ -50,7 +60,9 @@
 				       d.top + d.height > this.top){ 
 					complete = false;
 					}
-				});
+					});
+					*/
+				
 			}
 			coords.push(d);
 			(o.animate)? cxt.animate({left: d.left,top: d.top}, o.speed) : cxt.css({left: d.left,top: d.top});

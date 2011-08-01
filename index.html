@@ -55,7 +55,7 @@
 		</div>
 		</p>
 		
-		<p><h2>CSS-only positioning</h2></p>
+		<p><h2>Using String Selector & CSS-only positioning</h2></p>
 		<p>
 		<div id="magic2">
 		<a href="#" class="win">elem</a>
@@ -80,7 +80,7 @@
 		</div>
 		</p>
 		
-		<p><h2>regionResize example</h2></p>
+		<p><h2>Using jQuery Selector & CSS positioning</h2></p>
 		<p>
 		<div id="magic3">
 		<a href="#" class="dot">elem</a>
@@ -124,7 +124,7 @@
 		//$('#magic1 .win').noverlap({'regionWidth':'600px', 'regionHeight':'300px'}); //doesnt animate
 		$('#magic1 .win').noverlap({'boundTo':'#magic1'});
 		$('#magic2 .win').noverlap({'boundTo':'#magic2', 'animate':false});
-		$('#magic3 .dot').noverlap({'boundTo':'#magic3', 'animate':false});
+		$('#magic3 .dot').noverlap({'boundTo':$('#magic3'), 'animate':false});
 		//$('#magic2 .win').noverlap({'boundTo':$('#magic2'),'animate':false});
 		//$('#magic3 .win').noverlap({'boundTo':$('#magic3'),'animate':false});
 
