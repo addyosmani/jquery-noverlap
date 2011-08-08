@@ -15,12 +15,12 @@
     		speed: "slow",
     		boundTo: null, //accepts jQuery objects or string selectors
     		regionResize: 0.85,
-			animate: true
+			animate: true,
+			coords:[]
     	};
     	
     	
     	var o = $.extend({}, $.fn.noverlap.defaults, options),
-    		coords = [],
     		ctx = null,
 			props = [],
 			t = null;
@@ -44,27 +44,15 @@
 				d.left = parseInt(Math.random() * parseInt(o.regionWidth) + o.regionLeft);
 				d.top = parseInt(Math.random() * parseInt(o.regionHeight) + o.regionTop);
 				complete = true;
-				//
-				for(var i=0; i<coords.length;i++){
-					t = coords[i];
+				for(var i=0; i<o.coords.length;i++){
+					t = o.coords[i];
 					if(d.left < t.left + t.width && d.left + d.width > t.left &&
 				       d.top < t.top + t.height && d.top + d.height > t.top){ 
 						complete = false;
 					}
 				}
-				/*
-				$.each(coords, function(){
-					if(d.left < this.left + this.width &&
-				       d.left + d.width > this.left &&
-				       d.top < this.top + this.height &&
-				       d.top + d.height > this.top){ 
-					complete = false;
-					}
-					});
-					*/
-				
 			}
-			coords.push(d);
+			o.coords.push(d);
 			(o.animate)? cxt.animate({left: d.left,top: d.top}, o.speed) : cxt.css({left: d.left,top: d.top});
 			});
     }

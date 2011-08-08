@@ -52,6 +52,7 @@
 		<a href="#" class="win">elem</a>
 		<a href="#" class="win">elem</a>
 		<a href="#" class="win">elem</a>
+		<a href="#" style="position:absolute;left:609px;top:202px;background:red;width:120px;padding:5px;height:50px">elem</a>
 		</div>
 		</p>
 		
@@ -122,9 +123,11 @@
 	<script type="text/javascript">
 	$(function(){
 		//$('#magic1 .win').noverlap({'regionWidth':'600px', 'regionHeight':'300px'}); //doesnt animate
-		$('#magic1 .win').noverlap({'boundTo':'#magic1'});
+		//$('#magic1 .win').noverlap({'boundTo':'#magic1'});
+		$('#magic1 .win').noverlap({'boundTo':'#magic1','coords':[{'height':70,'width':140,'top':202,'left':609}]});
+
 		$('#magic2 .win').noverlap({'boundTo':'#magic2', 'animate':false});
-		$('#magic3 .dot').noverlap({'boundTo':$('#magic3'), 'animate':false});
+		//$('#magic3 .dot').noverlap({'boundTo':$('#magic3'), 'animate':false});
 		//$('#magic2 .win').noverlap({'boundTo':$('#magic2'),'animate':false});
 		//$('#magic3 .win').noverlap({'boundTo':$('#magic3'),'animate':false});
 
